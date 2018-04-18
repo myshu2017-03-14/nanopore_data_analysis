@@ -15,7 +15,7 @@ exit 0
 [ "$1" = "-h" ] && help
 
 in=$1
-pro=$0
+pro=$(dirname $0)
 # 16S
 for i in $in/*16S_anno_cov_uniq.out
 do
