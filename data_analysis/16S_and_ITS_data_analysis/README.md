@@ -5,11 +5,13 @@ The steps of the analysis are as follows ：
  
 # run blast
 `blastn.sh <input_fasta_dir> <input_fasta_len_dir>`
+
 nohup ./blastn.sh /analysis/software_han/3-finaldata/nanopore-data-out/20180318_add_7_samples_and_1_samples/all_data_out/data/ /analysis/software_han/3-finaldata/nanopore-data-out/20180318_add_7_samples_and_1_samples/all_data_out/data/ &
-## Note that the results is in the current directory.
+>*Note that the results is in the current directory.
 
 # count each level abundance 
 `count_taxa_abundance_blastn.sh <blastn_out_dir>`
+
 ./count_taxa_abundance_blastn.sh blastn_out/
 
 # cat all samples taxa abundance of each level
