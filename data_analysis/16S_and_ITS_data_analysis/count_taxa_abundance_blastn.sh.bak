@@ -17,7 +17,7 @@ exit 0
 in=$1
 
 # 16S
-for i in $in/*16S_anno_cov_uniq.out
+for i in $in/blastn_out/*16S_anno_cov_uniq.out
 do
 	name=$(basename $i .out)
 	cut -f 2 $i|grep -v 'Subject'|grep -v 'No hits found'|sort|uniq > $name.taxa.ref.ids
@@ -29,7 +29,7 @@ do
 	done
 done
 # ITS
-for i in $in/*ITS_anno_cov_uniq.out
+for i in $in/blastn_out/*ITS_anno_cov_uniq.out
 do
 	name=$(basename $i .out)
 	cut -f 2 $i|grep -v 'Subject'|grep -v 'No hits found'|sort|uniq > $name.taxa.ref.ids
@@ -42,4 +42,4 @@ do
 done
 
 rm *_blastn*.taxa.ref.* 
-mv *_blastn*.abundance* *blastn*.taxa.out $in/
+mv *_blastn*.abundance* *blastn*.taxa.out $in/blastn_out/
