@@ -37,7 +37,7 @@ do
 	perl $pro/get_taxa_abundance_program/get_taxa_for_blastTab.pl -i $i -id $name.taxa.ref.txt -o $name.taxa.out
 	for n in 1 2 3 4 5 6 7
 	do
-		$pro/get_taxa_abundance_programget_taxa_abundace.sh $name.taxa.out $n $name.abundance.level$n.out 16 n
+		$pro/get_taxa_abundance_program/get_taxa_abundace.sh $name.taxa.out $n $name.abundance.level$n.out 16 n
 	done
 done
 
