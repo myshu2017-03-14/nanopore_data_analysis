@@ -26,13 +26,13 @@ do
 	name=$(basename $i .fasta)
 	# 16S
 	blastn -query $i -db $pro/database/16S_db/NCBI-16S-18998 -out $name\_blastn_16S.out -outfmt 6 -evalue 1e-5 -num_threads 6 -max_target_seqs 5
-	perl $pro/db_program/result2anno.pl -in $name\_blastn_16S.out -tab $pro/16S_db/NCBI-16S/NCBI-16S-18998.tab -out $name\_blastn_16S_anno.out
+	perl $pro/db_program/result2anno.pl -in $name\_blastn_16S.out -tab $pro/database/16S_db/NCBI-16S-18998.tab -out $name\_blastn_16S_anno.out
 	perl $pro/db_program/calculate_coverage_for_blast_results.pl -in $name\_blastn_16S_anno.out -len $IN_LEN/$name.len -out $name\_blastn_16S_anno_cov.out
 	perl $pro/db_program/get_one_results_of_each.pl -in $name\_blastn_16S_anno_cov.out -out $name\_blastn_16S_anno_cov_uniq.out
 
 	# ITS
 	blastn -query $i -db $pro/database/ITS_db/fungi.ITS -out $name\_blastn_ITS.out -outfmt 6 -evalue 1e-5 -num_threads 6 -max_target_seqs 5
-	perl $pro/db_program/result2anno.pl -in $name\_blastn_ITS.out -tab $pro/ITS_db/NCBI-refseq-targetedloci/fungi.ITS.tab -out $name\_blastn_ITS_anno.out
+	perl $pro/db_program/result2anno.pl -in $name\_blastn_ITS.out -tab $pro/database/ITS_db/fungi.ITS.tab -out $name\_blastn_ITS_anno.out
 	perl $pro/db_program/calculate_coverage_for_blast_results.pl -in $name\_blastn_ITS_anno.out -len $IN_LEN/$name.len -out $name\_blastn_ITS_anno_cov.out
 	perl $pro/db_program/get_one_results_of_each.pl -in $name\_blastn_ITS_anno_cov.out -out $name\_blastn_ITS_anno_cov_uniq.out
 
