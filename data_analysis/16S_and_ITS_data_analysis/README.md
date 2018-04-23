@@ -16,5 +16,5 @@ nohup ./blastn.sh /analysis/software_han/3-finaldata/nanopore-data-out/20180318_
 ./count_taxa_abundance_blastn.sh blastn_out/
 
 # cat all samples taxa abundance of each level
-./cat_taxa_abundance.sh
+./cat_taxa_abundance.sh blastn_out
 
