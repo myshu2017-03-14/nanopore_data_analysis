@@ -7,7 +7,7 @@ cat <<HELP
 USAGE: $0 blastn_out_dir
     or $0 ‐h # show this message
 EXAMPLE:
-    $0 .
+    $0 blastn_out
 HELP
 exit 0
 }
@@ -20,7 +20,7 @@ for n in 1 2 3 4 5 6 7
 do
 	j=1
 	# ITS
-	for i in $in/blastn_out/*_blastn_ITS_anno_cov_uniq.abundance.level$n.out
+	for i in $in/*_blastn_ITS_anno_cov_uniq.abundance.level$n.out
 	do
 		if [ $j == 1 ]
 		then
@@ -36,11 +36,11 @@ do
 		cat /dev/null > $t
 		cat tmp.out > $t
 	done
-	cat tmp.out > $in/blastn_out/cat_taxa_abundance.ITS.level$n.out		
+	cat tmp.out > $in/cat_taxa_abundance.ITS.level$n.out		
 	rm tmp.out
 	# 16S
 	j=1
-	for i in $in/blastn_out/*_blastn_16S_anno_cov_uniq.abundance.level$n.out
+	for i in $in/*_blastn_16S_anno_cov_uniq.abundance.level$n.out
 	do
 		if [ $j == 1 ]
 		then
@@ -56,7 +56,7 @@ do
 		cat /dev/null > $t
 		cat tmp.out > $t	
 	done	
-	cat tmp.out > $in/blastn_out/cat_taxa_abundance.16S.level$n.out		
+	cat tmp.out > $in/cat_taxa_abundance.16S.level$n.out		
 	rm tmp.out
 done
 rm tmp.txt
